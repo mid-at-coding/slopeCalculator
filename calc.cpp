@@ -75,7 +75,7 @@ void e(){
 }
 int main()
 {   
-    whil(true){
+    while(true){
         char in;
         std::cout << "enter r for rate of pay and e for equation" << std::endl;
         cin>>in;
