@@ -5,6 +5,15 @@ struct POINT{
     int x;
     int y;
 };
+int gcd(int m,int n){
+if(m<n)swap(m,n); // make n the smallest of the two
+while(n>0){ 
+long r =m%n;
+m=n;
+n=r;
+}
+return m; //m is the g.c.d.
+} 
 void rop(){
         float rop;
     float bonus;
@@ -71,6 +80,8 @@ void e(){
     cin>>b.y;
     out.x = b.x - a.x;
     out.y = b.y - a.y;
+    out.x = (b.x - a.x) / gcd(out.x,out.y);
+    out.y = (b.y - a.y) / gcd((b.x - a.x),out.y);
     cout<<out.x<<" over "<<out.y<<endl;
 }
 int main()
