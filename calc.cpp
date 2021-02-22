@@ -1,6 +1,11 @@
-
+#include <cmath>
 #include <iostream>
 using namespace std;;
+struct doublePOINT{
+    //changing this to double will probably break a lot of things but im gonna do it anyway
+    double x;
+    double y;
+};
 struct POINT{
     int x;
     int y;
@@ -67,9 +72,10 @@ void rop(){
     }
 }
 void e(){
-    POINT a;
-    POINT b;
-    POINT out;
+    POINT compare;
+    doublePOINT a;
+    doublePOINT b;
+    doublePOINT out;
     cout<<"x1 = ";
     cin>>a.x;
     cout<<endl<<"y1 = ";
@@ -82,6 +88,14 @@ void e(){
     out.y = b.y - a.y;
     out.x = (b.x - a.x) / gcd(out.x,out.y);
     out.y = (b.y - a.y) / gcd((b.x - a.x),out.y);
+    while(fmod(out.x,1)){
+        out.x *= 10;
+        out.y *= 10;
+    }
+    while(fmod(out.y,1)){
+        out.x *= 10;
+        out.y *= 10;
+    }
     cout<<out.x<<" over "<<out.y<<endl;
 }
 int main()
