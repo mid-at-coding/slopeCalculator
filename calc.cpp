@@ -32,8 +32,8 @@ void rop(){
     }
     currenty = arr[2].y - arr[1].y;
     currentx = arr[2].x - arr[1].x;
-    cout<<"rise : "<<currenty;
-    cout<<endl<<"run : "<<currentx;
+    cout<<"x : "<<currenty;
+    cout<<endl<<"y : "<<currentx;
     cout<<endl<<"graph"<<endl;
     for(int x = 0;x<=100;x++){
         for(int y = 0;y<=100;y++){
@@ -74,15 +74,17 @@ void e(){
     cout<<out.x<<" over "<<out.y;
 }
 int main()
-{
-    char in;
-    std::cout << "enter r for rate of pay and e for equation" << std::endl;
-    cin>>in;
-    cout<<endl;
-    if(in == 'r' || in == 'R'){
-        rop();
-    }
-    else if(in == 'e' || in == 'E'){
-        e();
+{   
+    whil(true){
+        char in;
+        std::cout << "enter r for rate of pay and e for equation" << std::endl;
+        cin>>in;
+        cout<<endl;
+        if(in == 'r' || in == 'R'){
+            rop();
+        }
+        else if(in == 'e' || in == 'E'){
+            e();
+        }
     }
 }
