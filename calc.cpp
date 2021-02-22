@@ -12,12 +12,12 @@ struct POINT{
 };
 int gcd(int m,int n){
 if(m<n)swap(m,n); // make n the smallest of the two
-while(n>0){ 
-long r =m%n;
-m=n;
-n=r;
-}
-return m; //m is the g.c.d.
+    while(n>0){ 
+        long r =m%n;
+        m=n;
+        n=r;
+    }
+    return m; //m is the g.c.d.
 } 
 void rop(){
         float rop;
