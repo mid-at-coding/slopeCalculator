@@ -71,7 +71,7 @@ void e(){
     cin>>b.y;
     out.x = b.x - a.x;
     out.y = b.y - a.y;
-    cout<<out.x<<" over "<<out.y;
+    cout<<out.x<<" over "<<out.y<<endl;
 }
 int main()
 {   
