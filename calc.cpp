@@ -1,8 +1,7 @@
 #include <cmath>
 #include <iostream>
 using namespace std;;
-struct doublePOINT{
-    //changing this to double will probably break a lot of things but im gonna do it anyway
+struct floatPOINT{
     double x;
     double y;
 };
@@ -73,9 +72,9 @@ void rop(){
 }
 void e(){
     POINT compare;
-    doublePOINT a;
-    doublePOINT b;
-    doublePOINT out;
+    floatPOINT a;
+    floatPOINT b;
+    floatPOINT out;
     cout<<"x1 = ";
     cin>>a.x;
     cout<<endl<<"y1 = ";
@@ -86,8 +85,8 @@ void e(){
     cin>>b.y;
     out.x = b.x - a.x;
     out.y = b.y - a.y;
-    out.x = (b.x - a.x) / gcd(out.x,out.y);
-    out.y = (b.y - a.y) / gcd((b.x - a.x),out.y);
+    out.x = (b.x - a.x) / gcd((int)out.x,(int)out.y);
+    out.y = (b.y - a.y) / gcd((int)(b.x - a.x),(int)out.y);
     while(fmod(out.x,1)){
         out.x *= 10;
         out.y *= 10;
@@ -96,20 +95,23 @@ void e(){
         out.x *= 10;
         out.y *= 10;
     }
-    cout<<out.x<<" over "<<out.y<<endl;
+    cout<<out.y<<" over "<<out.x<<endl;
 }
 int main()
 {   
     while(true){
         char in;
-        std::cout << "enter r for rate of pay and e for equation" << std::endl;
-        cin>>in;
-        cout<<endl;
+        std::cout << "enter r for rate of pay and e for equation (press q to quit)" << std::endl;
+        in = getchar();
         if(in == 'r' || in == 'R'){
             rop();
         }
         else if(in == 'e' || in == 'E'){
             e();
         }
+        else if(in == 'q' || in == 'Q'){
+            return 0;
+        }
     }
+        
 }
