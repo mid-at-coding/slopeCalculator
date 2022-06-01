@@ -125,5 +125,8 @@ int main(){
         else if(in == 'q' || in == 'Q'){
             return 0;
         }
+        else{
+            printf("unknown command: %c\n", in);
+            return 1;
     }
 }
