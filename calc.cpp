@@ -1,14 +1,18 @@
 #include <cmath>
 #include <iostream>
+
 using namespace std;;
+
 struct floatPOINT{
     double x;
     double y;
 };
+
 struct POINT{
     int x;
     int y;
 };
+
 int gcd(int m,int n){
 if(m<n)swap(m,n); // make n the smallest of the two
     while(n>0){ 
@@ -16,8 +20,10 @@ if(m<n)swap(m,n); // make n the smallest of the two
         m=n;
         n=r;
     }
+    
     return m; //m is the g.c.d.
 } 
+
 void rop(){
         float rop;
     float bonus;
@@ -36,13 +42,14 @@ void rop(){
     for (int i = 0;i<20;i++){
         if (i != 1){
             cout<<i<<" Hours $"<<i*rop+bonus<<endl;
-        }
-        else{
+        }else{
             cout<<i<<" Hour $"<<i*rop+bonus<<endl;
         }
+        
         arr[i].y = i*rop;
         arr[i].x = i;
     }
+    
     currenty = arr[2].y - arr[1].y;
     currentx = arr[2].x - arr[1].x;
     cout<<"x : "<<currenty;
@@ -53,23 +60,26 @@ void rop(){
             graph[x][y] = false;
         }
     }
+    
     for (int i = 0; i < 20; i++){
         if (100 - arr[i].x > 0 && 100 - arr[i].y > 0){
         graph[100 - arr[i].x][100 - arr[i].y] = true;
         }
     }
+    
     for (int y = 0; y <= 50; y++){
         for (int x = 100; x >= 0; x--){
             if (graph[x][y]){
                 cout<<"0";
-            }
-            else{
+            }else{
                 cout<<" ";
             }
         }
+        
         cout<<endl;
     }
 }
+
 void e(){
     POINT compare;
     floatPOINT a;
@@ -87,18 +97,21 @@ void e(){
     out.y = b.y - a.y;
     out.x = (b.x - a.x) / gcd((int)out.x,(int)out.y);
     out.y = (b.y - a.y) / gcd((int)(b.x - a.x),(int)out.y);
+    
     while(fmod(out.x,1)){
         out.x *= 10;
         out.y *= 10;
     }
+    
     while(fmod(out.y,1)){
         out.x *= 10;
         out.y *= 10;
     }
+    
     cout<<out.y<<" over "<<out.x<<endl;
 }
-int main()
-{   
+
+int main(){   
     while(true){
         char in;
         std::cout << "enter r for rate of pay and e for equation (press q to quit)" << std::endl;
@@ -113,5 +126,4 @@ int main()
             return 0;
         }
     }
-        
 }
